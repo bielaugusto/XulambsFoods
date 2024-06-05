@@ -1,18 +1,25 @@
-public class GerenciadorFuncionarios
+﻿using System.Collections.Generic;
+using System;
+
+namespace XulambsFoods
 {
-    private List<Funcionario> funcionarios = new List<Funcionario>();
-
-    public void CadastrarFuncionario(Funcionario funcionario)
+    public class GerenciadorFuncionarios
     {
-        funcionarios.Add(funcionario);
-    }
+        private List<Funcionario> funcionarios = new List<Funcionario>();
 
-    public void ExibirRelatorioSalarios()
-    {
-        Console.WriteLine("Relatório de Salários dos Funcionários:");
-        foreach (var funcionario in funcionarios)
+        public void CadastrarFuncionario(Funcionario funcionario)
         {
-            Console.WriteLine($"ID: {funcionario.ID}, Nome: {funcionario.Nome}, Salário Final: {funcionario.CalcularSalario():C2}");
+            funcionarios.Add(funcionario);
+        }
+
+        public void ExibirRelatorioSalarios()
+        {
+            Console.WriteLine("Relatório de Salários dos Funcionários:");
+            foreach (var funcionario in funcionarios)
+            {
+                Console.WriteLine($"ID: {funcionario.ID}, Nome: {funcionario.Nome}, Salário Final: {funcionario.CalcularSalario():C2}");
+            }
+            Console.ReadLine();
         }
     }
 }

@@ -1,15 +1,18 @@
-public class FuncionarioFreelancer : Funcionario
+﻿namespace XulambsFoods
 {
-    public decimal ValorServico { get; set; }
-
-    public FuncionarioFreelancer(int id, string nome, decimal valorServico) 
-        : base(id, nome)
+    public class FuncionarioFreelancer : Funcionario
     {
-        ValorServico = valorServico;
-    }
+        public decimal ValorServico { get; set; }
 
-    public override decimal CalcularSalario()
-    {
-        return ValorServico;
+        public FuncionarioFreelancer(int id, string nome, decimal valorServico)
+            : base(id, nome)
+        {
+            ValorServico = valorServico;
+        }
+
+        public override decimal CalcularSalario()
+        {
+            return ValorServico;
+        }
     }
 }
